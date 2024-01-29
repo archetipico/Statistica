@@ -1,5 +1,4 @@
 \documentclass[11pt]{report}
-%\pdfminorversion=9
 
 \usepackage{
 	amsmath,
@@ -61,7 +60,7 @@
         linenos,
         gobble=0,
         breaklines=true,
-        breakafter=,,
+        breakafter=,
         numbersep=8pt,
     #1},
     boxsep=0pt,
@@ -193,7 +192,7 @@ Dentro al cerchio mettiamo le predizioni positive mentre il quadrato è il "mond
     \begin{tabular}{ c| c c c }
     & + & E & - \\
     \hline
-    + & VP & & FP \\ 
+    + & VP & & FP \\
     P \\
     - & FN & & VN \\
     \hline
@@ -235,7 +234,7 @@ $$(1 - \text{SPEC}, \text{SENS}) = \left(1 - \frac{\text{VN}}{\text{TN}}, \frac{
 	\begin{tabular}{ c| c c c }
 		& + & E & - \\
 		\hline
-		+ & TP & & TN \\ 
+		+ & TP & & TN \\
 		P \\
 		- & 0 & & 0
 	\end{tabular}
@@ -246,7 +245,7 @@ $$(1 - \text{SPEC}, \text{SENS}) = \left(1 - \frac{\text{VN}}{\text{TN}}, \frac{
 	\begin{tabular}{ c| c c c }
 		& + & E & - \\
 		\hline
-		+ & 0 & & 0 \\ 
+		+ & 0 & & 0 \\
 		P \\
 		- & TP & & TN
 	\end{tabular}
@@ -257,7 +256,7 @@ $$(1 - \text{SPEC}, \text{SENS}) = \left(1 - \frac{\text{VN}}{\text{TN}}, \frac{
 	\begin{tabular}{ c| c c c }
 		& + & E & - \\
 		\hline
-		+ & TP & & 0 \\ 
+		+ & TP & & 0 \\
 		P \\
 		- & 0 & & TN
 	\end{tabular}
@@ -268,7 +267,7 @@ $$(1 - \text{SPEC}, \text{SENS}) = \left(1 - \frac{\text{VN}}{\text{TN}}, \frac{
 	\begin{tabular}{ c| c c c }
 		& + & E & - \\
 		\hline
-		+ & 0 & & TN \\ 
+		+ & 0 & & TN \\
 		P \\
 		- & TP & & 0
 	\end{tabular}
@@ -282,7 +281,7 @@ $$(1 - \text{SPEC}, \text{SENS}) = \left(1 - \frac{\text{VN}}{\text{TN}}, \frac{
                 \begin{tabular}{ c| c c c }
                 & + & E & - \\
                 \hline
-                + & $\frac{1}{2}$TP & & $\frac{1}{2}$TN \\ 
+                + & $\frac{1}{2}$TP & & $\frac{1}{2}$TN \\
                 P \\
                 - & $\frac{1}{2}$TP & & $\frac{1}{2}$TN
                 \end{tabular}
@@ -297,7 +296,7 @@ $$(1 - \text{SPEC}, \text{SENS}) = \left(1 - \frac{\text{VN}}{\text{TN}}, \frac{
                 \begin{tabular}{ c| c c c }
                 & + & E & - \\
                 \hline
-                + & $\frac{4}{5}$TP & & $\frac{4}{5}$TN \\ 
+                + & $\frac{4}{5}$TP & & $\frac{4}{5}$TN \\
                 P \\
                 - & $\frac{1}{5}$TP & & $\frac{1}{5}$TN
                 \end{tabular}
@@ -545,7 +544,7 @@ Definiamo ora due frequenze relative cumulate:
     \begin{equation}
         F_i = \frac{i}{n}\ \ \ \ \forall i=1, \cdots, n
     \end{equation}
-    
+
     \item \textbf{Quantità relativa cumulata fino alla $i$-esima osservazione:}
     \begin{equation}
         Q_i = \frac{\sum_{k=1}^{i} a_k}{\text{TOT}}
@@ -972,7 +971,7 @@ Ipòotizziamo di avere una partizione di $\Omega$ con $F_1, F_2,..., F_n \subset
 	\begin{scope}
     		\fill (0,0) ellipse (2 and 1);
 	\end{scope}
-	
+
 	\draw (0,0) ellipse (2 and 1) (0,1) node [text=black,above] {$E$}
 	      (-2.5,-2) rectangle (2.5,2) node [text=black,above] {$\Omega$}
 	      (-1.5,-2) -- (-1.5,2) (-2,-2) node [text=black,above] {$F_1$}
@@ -1428,7 +1427,7 @@ Questa tipologia di funzione viene impiegata per campioni bivariati di variabili
 \end{itemize}
 
 \section{Funzione di ripartizione congiunta}
-Data una coppia $X,Y$, la funzione $F_{X,Y}(x,y) = P(X \leq x, Y \leq y)$. La distribuzione marginale è invece nota come 
+Data una coppia $X,Y$, la funzione $F_{X,Y}(x,y) = P(X \leq x, Y \leq y)$. La distribuzione marginale è invece nota come
 \begin{equation}
     \begin{split}
         \lim_{y \to \infty} F_{X,Y}(x,y) & = \lim_{y \to \infty} P(X \leq x, Y \leq y)\\
@@ -1565,7 +1564,7 @@ Definendo $(X-c)^2$ come \textbf{scarto quadratico}, questo implica che io decid
 \section{Covarianza}
 Sappiamo che $\mathbb{E}(X + X) = \mathbb{E}(X) + \mathbb{E}(X) = 2\mathbb{E}(X)$ e quindi $\mathbb{E}(2X) = 2\mathbb{E}(X)$, mentre la varianza $Var(X + X) = Var(2X) = 2^2Var(X) = 4Var(X)$. Ma se ho due variabili aleatorie $X,Y$ definisco la covarianza tra $X$ e $Y$ come
 \begin{equation}
-    Cov(X,Y) = \mathbb{E}((X - \mu_X)(Y - \mu_Y))    
+    Cov(X,Y) = \mathbb{E}((X - \mu_X)(Y - \mu_Y))
 \end{equation}
 e dichiaro le seguenti proprietà
 \begin{enumerate}
@@ -3577,7 +3576,7 @@ Oppure potevo anche fare
     \end{split}
 \end{equation}
 Dunque per riassumere:
-\begin{itemize} 
+\begin{itemize}
     \item $MSE_\theta(T'') = MSE_\theta \left( \frac{n+1}{n} \max\ X_i \right) = \frac{\theta^2}{n(n+2)}$
     \item $MSE_\theta(T) = MSE_\theta(\overline{X}) = \frac{\theta^2}{3n}$
     \item $\mathbb{E}(T) = \mathbb{E}(T'') = \theta$
@@ -4063,7 +4062,7 @@ model.predict(X)
 graphviz.Source(
     tree.export_graphviz(
         clf,
-        out_file=None, 
+        out_file=None,
         class_names=['bad guy', 'good guy'],
         feature_names=features
     )
